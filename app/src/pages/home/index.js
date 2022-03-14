@@ -14,8 +14,10 @@ function homePage(){
                     <p>Olá, seja Bem Vindo ao Poke Trade!!</p> 
                     <p>
                         Funciona assim:<br/>
-                        1. O primeiro jogador vai ofertar entre 1 e 6 pokemons e o segundo jogador tambem.<br/><br/>
-                        Qualquer combinação é valida!<br/><br/>
+                        1. O primeiro jogador vai ofertar entre 1 e 6 pokemons e o segundo jogador tambem.
+                        <p style={{ color: '#FF9441' }}>
+                            Qualquer combinação é valida!!
+                        </p>
 
                         2. Uma troca é considerada justa, se a soma das bases de experiencia dos pokemons de cada lado da troca é próxima uma da outra.
                     </p>
