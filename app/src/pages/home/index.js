@@ -1,5 +1,6 @@
 import '../../styles/home.css';
 import Charmander from '../../assets/charmander.png';
+import { Link } from "react-router-dom";
 
 function homePage(){
     return(
@@ -21,9 +22,11 @@ function homePage(){
                     Ok, vamos lá então??
                 </div>
                 <div className="HomeButtonBox">
-                    <button type="button" className="HomeButton">
-                        START
-                    </button>
+                    <Link style={{ textDecoration: "none" }} to={{ pathname: "/trade" }}>
+                        <button type="button" className="HomeButton">
+                            START
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

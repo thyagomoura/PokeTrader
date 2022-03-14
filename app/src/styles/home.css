@@ -41,4 +41,10 @@
     background-color: #1093C6;
     color: #fff;
     border: none;
+    transition: all 0.8s;
 }
+.HomeButtonBox button:hover{
+    cursor: pointer;
+    background-color: #08516e;
+}
+
