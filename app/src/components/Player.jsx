@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 
-const Player2 = () => {
-    const [numPokemonTrade, setNumPokemonTrade] = useState([])
-    const [pokemon, setPokemon] = useState([]);
+const Player = ({
+        pokemon,
+        setPokemon,
+        numPokemonTrade, 
+        setNumPokemonTrade
+    }) => {
 
-    const quantityPlayer2Trade = (quantity, pokemon) => {
+    const quantityPlayer1Trade = (quantity, pokemon) => {
         numPokemonTrade.map((index) => {
             if(index.pokemon.name === pokemon.name){
                 return numPokemonTrade.splice(numPokemonTrade.indexOf(index), 1);
@@ -13,7 +16,7 @@ const Player2 = () => {
             }
             return numPokemonTrade;
         });
-        console.log(quantity);
+        console.log();
         setNumPokemonTrade((numPokemonTrade) => [
             ...numPokemonTrade,
             {
@@ -21,7 +24,7 @@ const Player2 = () => {
                 quantity, 
             },
         ]);
-    }; 
+    };
 
     useEffect(() => {
         const getPokemons = async () => {
@@ -61,11 +64,10 @@ const Player2 = () => {
         getPokemons();
     } ,[])
 
-
-
-    return(
+    return (
         <div className="TraderContentBox1">
-                <h3>Player 2</h3>
+            <h3>Player 1</h3>
+            
             {pokemon &&
                 pokemon.map((item, index) => (
                     <div className="PokemonBox">
@@ -80,14 +82,14 @@ const Player2 = () => {
                                 type="number"
                                 min="0"
                                 max="6"
-                                onChange={(e) => quantityPlayer2Trade(e.target.value, item)}
+                                onChange={(e) => quantityPlayer1Trade(e.target.value, item)}
                             />
                         </div>
                     </div>
-                ))}
-
-            </div>
+                ))
+            }
+        </div>
     )
 }
 
-export default Player2;
+export default Player;

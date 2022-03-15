@@ -46,3 +46,12 @@
 .TraderImgs img{
     width: 8rem;
 }
+
+.CheckboxConfirm{
+    display: flex;
+    justify-content: center;
+}
+.CheckboxConfirm input{
+    padding: 2rem;
+    margin-top: 1.2rem;
+}
