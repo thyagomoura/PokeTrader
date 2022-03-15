@@ -13,7 +13,6 @@ const Player1 = () => {
             }
             return numPokemonTrade;
         });
-        console.log(quantity);
         setNumPokemonTrade((numPokemonTrade) => [
             ...numPokemonTrade,
             {
@@ -24,7 +23,7 @@ const Player1 = () => {
     };
     const [pokemon, setPokemon] = useState([]);
     
-
+    console.log(numPokemonTrade);
     
 
     useEffect(() => {
@@ -65,10 +64,9 @@ const Player1 = () => {
         getPokemons();
     } ,[])
 
-
     return (
         <div className="TraderContentBox1">
-                <h3>Player 1</h3>
+            <h3>Player 1</h3>
             {pokemon &&
                 pokemon.map((item, index) => (
                     <div className="PokemonBox">
@@ -87,9 +85,9 @@ const Player1 = () => {
                             />
                         </div>
                     </div>
-                ))}
-
-            </div>
+                ))
+            }
+        </div>
     )
 }
 
