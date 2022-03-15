@@ -22,9 +22,6 @@ const Player1 = () => {
         ]);
     };
     const [pokemon, setPokemon] = useState([]);
-    
-    console.log(numPokemonTrade);
-    
 
     useEffect(() => {
         const getPokemons = async () => {
