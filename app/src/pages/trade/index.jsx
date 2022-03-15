@@ -6,13 +6,14 @@ import TradeIcon from '../../assets/tradeIcon.png'
 import Player from '../../components/Player'
 
 const TradePage = () => {
-    const [pokemon1, setPokemon1] = useState([]);
-    const [numPokemonTrade1, setNumPokemonTrade1] = useState([])
-    const [pokemon2, setPokemon2] = useState([]);
-    const [numPokemonTrade2, setNumPokemonTrade2] = useState([])
+    const [numPokemonTrade1, setNumPokemonTrade1] = useState([]);
+    const [numPokemonTrade2, setNumPokemonTrade2] = useState([]);
+    const history = useHistory();
+
     let TotalexperienceP1=0;
     let TotalexperienceP2=0;
-    const history = useHistory();
+    let  trade = [];
+    var string = [];
     
     const ValidTrade = () => {
         //valid entered player
@@ -25,16 +26,39 @@ const TradePage = () => {
             alert( 'Um player não selecionou entre 1 e 6 pokemons para troca');
         }
         else{
-           numPokemonTrade1.map((index) => {
+            numPokemonTrade1.map((index) => {
                 TotalexperienceP1 =+TotalexperienceP1+ +(index.pokemon.experience * index.quantity);
-               return localStorage.setItem("BaseExperienceP1", TotalexperienceP1);
+
+                //set localStorage player 1
+                trade.push({
+                    pokemon: [
+                        index.pokemon.name, 
+                        TotalexperienceP1, 
+                        index.quantity
+                    ]
+                });
+                
+                return trade;
             });
 
+            //set localStorage player 1
             numPokemonTrade2.map((index) => {
                 TotalexperienceP2 =+TotalexperienceP2+ +(index.pokemon.experience * index.quantity);
-                localStorage.setItem("BaseExperienceP2", TotalexperienceP2);
-                return history.push('/result'); 
-            });
+
+                trade.push({versus: "--------------x--------------" });
+                trade.push({
+                    PokemonNums: [
+                        index.pokemon.name, 
+                        TotalexperienceP2, 
+                        index.quantity
+                    ]});
+                    string = JSON.stringify(trade)
+                    trade = JSON.parse(string);
+                    trade.push([])
+                    console.log(trade)
+                
+                return history.push('/result');; 
+                });
         } 
     }
 
@@ -42,8 +66,6 @@ const TradePage = () => {
     return(
         <div className="TraderGlobalContent">
             <Player 
-                pokemon = {pokemon1} 
-                setPokemon = {setPokemon1}
                 numPokemonTrade={numPokemonTrade1} 
                 setNumPokemonTrade={setNumPokemonTrade1}
             />
@@ -52,8 +74,6 @@ const TradePage = () => {
                 <img alt="Trade icon" src={TradeIcon} onClick={ValidTrade}/> 
             </div>
             <Player
-                pokemon = {pokemon2} 
-                setPokemon = {setPokemon2}
                 numPokemonTrade={numPokemonTrade2} 
                 setNumPokemonTrade={setNumPokemonTrade2}
             />

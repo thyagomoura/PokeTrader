@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 
-const Player = ({
-        pokemon,
-        setPokemon,
-        numPokemonTrade, 
-        setNumPokemonTrade
-    }) => {
+const Player = ({numPokemonTrade, setNumPokemonTrade}) => {
 
+    const [pokemon, setPokemon] = useState([]);
     const quantityPlayer1Trade = (quantity, pokemon) => {
         numPokemonTrade.map((index) => {
             if(index.pokemon.name === pokemon.name){
