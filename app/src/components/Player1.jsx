@@ -4,13 +4,15 @@ import api from "../services/api";
 const Player1 = () => {
 
     const [numPokemonTrade, setNumPokemonTrade] = useState([])
-
+    const [pokemon, setPokemon] = useState([]);
+    
     const quantityPlayer1Trade = (quantity, pokemon) => {
         numPokemonTrade.map((index) => {
             if(index.pokemon.name === pokemon.name){
                 return numPokemonTrade.splice(numPokemonTrade.indexOf(index), 1);
                 
             }
+            localStorage.setItem("pokemon",numPokemonTrade);
             return numPokemonTrade;
         });
         setNumPokemonTrade((numPokemonTrade) => [
@@ -21,7 +23,6 @@ const Player1 = () => {
             },
         ]);
     };
-    const [pokemon, setPokemon] = useState([]);
 
     useEffect(() => {
         const getPokemons = async () => {

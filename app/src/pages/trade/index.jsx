@@ -12,12 +12,7 @@ const TradePage = () => {
             <Player1/>
             <div className="TraderImgs">
                 <img alt="Charmandr Pokemon" src={Charmaleon}/>
-                <Link 
-                    style={{ textDecoration: "none" }} 
-                    to={{ pathname: "/result" }}
-                >
-                    <img alt="Changes " src={TradeIcon}/>
-                </Link>
+                <img alt="Trade icon" src={TradeIcon} />
             </div>
             <Player2/>
         </div>
@@ -25,3 +20,8 @@ const TradePage = () => {
 }
 
 export default TradePage;
+/*
+<Link 
+style={{ textDecoration: "none" }} 
+to={{ pathname: "/result" }}
+>*/

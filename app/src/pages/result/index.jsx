@@ -1,7 +1,29 @@
+import { Link } from "react-router-dom";
+import '../../styles/result.css'
+import Charizard from '../../assets/charizard.png'
+
 function ResultPage(){
     return(
-        <div>
-            Result Page
+        <div className="ResultGlobalContent">
+            <div className="ResultTextButton">
+                <div className="ResultTextContent">
+                    troca boa ein
+                </div>
+                <div className="ResultButtonJogar">
+                    <Link 
+                        style={{ textDecoration: "none" }} 
+                        to={{ pathname: "/" }}
+                    >
+                        <button className="ButtonResult">
+                            Jogar novamente
+                        </button>
+                    </Link>
+                    
+                </div>
+            </div> 
+            <div className="ResultImg">
+                <img alt="Charizard pokemon" src={Charizard}/>
+            </div>
         </div>
     )
 }

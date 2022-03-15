@@ -3,6 +3,7 @@ import api from "../services/api";
 
 const Player2 = () => {
     const [numPokemonTrade, setNumPokemonTrade] = useState([])
+    const [pokemon, setPokemon] = useState([]);
 
     const quantityPlayer2Trade = (quantity, pokemon) => {
         numPokemonTrade.map((index) => {
@@ -20,11 +21,7 @@ const Player2 = () => {
                 quantity, 
             },
         ]);
-    };
-    const [pokemon, setPokemon] = useState([]);
-    
-
-    
+    }; 
 
     useEffect(() => {
         const getPokemons = async () => {
