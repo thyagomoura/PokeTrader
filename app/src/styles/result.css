@@ -1,35 +1,32 @@
-.ResultGlobalContent{
-    display: flex;
-    height: 100vh;
-    background-color: #EE8329;
+.ResultGlobalContent {
+  display: flex;
+  height: 100vh;
+  background-color: #ee8329;
 }
-.ResultTextButton{
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    margin: auto;
-    text-align: center;
+.ResultTextButton {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin: auto;
+  text-align: center;
 }
-.ResultText{
+.ResultImg {
+  position: relative;
 }
-.ResultImg{
-    position: relative;
+.ResultImg img {
+  width: 35rem;
 }
-.ResultImg img{
-    width: 35rem;
+.ButtonResult {
+  margin-top: 3rem;
+  padding: 0.5rem 00.5rem;
+  border-radius: 0.5rem;
+  background-color: #1093c6;
+  border-color: #ee8329;
+  box-shadow: none;
+  transition: all 0.8s;
 }
-.ButtonResult{
-    margin-top: 3rem;
-    padding: 0.5rem 00.5rem;
-    border-radius: 0.5rem;
-    background-color: #1093C6;
-    border-color: #EE8329;
-    box-shadow: none;
-    transition: all 0.8s;
+.ButtonResult:hover {
+  cursor: pointer;
+  box-shadow: none;
+  background-color: #0bbaff;
 }
-.ButtonResult:hover{
-    cursor: pointer;
-    box-shadow: none;
-    background-color: #0bbaff;
-}
-

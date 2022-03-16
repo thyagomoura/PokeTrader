@@ -3,8 +3,8 @@ import { useState } from "react";
 import "../../styles/trader.css";
 import Charmaleon from "../../assets/charmaleon.png";
 import TradeIcon from "../../assets/tradeIcon.png";
-import Player from "../../components/Player";
-import History from '../../components/History.jsx'
+import Player from "../../components/Player/Player";
+import History from '../../components/History/History'
 
 const TradePage = () => {
   const [numPokemonTrade1, setNumPokemonTrade1] = useState([]);
@@ -35,7 +35,7 @@ const TradePage = () => {
           trade.push(index);
           return trade;
         }
-        return 0;
+        return '';
       });
 
       //set localStorage player 2

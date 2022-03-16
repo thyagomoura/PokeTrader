@@ -2,37 +2,30 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/result.css";
 import Charizard from "../../assets/charizard.png";
-import History from '../../components/History.jsx'
+import History from '../../components/History/History.jsx'
 
 function ResultPage() {
-  //   var save = JSON.parse(localStorage.getItem("Trade"));
   let basePlayer1 = localStorage.getItem("TotalBaseExperiencePlayer1");
   let basePlayer2 = localStorage.getItem("TotalBaseExperiencePlayer2");
   let valid = true;
 
-  //   save.map((index) => {
-  //     if (index !== undefined) {
-  //       console.log(index.quantity);
-  //     } else {
-  //       console.log(index.pokemon);
-  //     }
-  //     return 0;
-  //   });
   const calculateBaseExperience = () => {
     let Abstractresult = Math.abs(basePlayer1 - basePlayer2);
 
     if (Abstractresult > 75) {
       valid = false;
+      localStorage.setItem('ValidTrade', valid);
       return valid;
     } else if (Abstractresult < 75) {
-      return (valid = true);
+      valid = true;
+      localStorage.setItem('ValidTrade', valid);
+      return valid
     }
   };
 
   useEffect(() => {
     calculateBaseExperience();
-    console.log(calculateBaseExperience()); // this will fire on every change :(
-  }, []);
+  },);
   return (
     <div className="ResultGlobalContent">
         <History/>

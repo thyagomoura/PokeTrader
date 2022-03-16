@@ -1,57 +1,56 @@
-.TraderGlobalContent{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    background-color: #F6AC29;
+.TraderGlobalContent {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f6ac29;
 }
-.TraderContentBox1{
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-    width: 24rem;
-    height: 30rem;
-    padding-bottom: 1rem;
-    border-radius: 1rem;
-    margin-left: 5rem;
-    margin-top: 3rem;
-    margin: auto;
-    text-align: center;
-    overflow-y: scroll;
+.TraderContentBox1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 24rem;
+  height: 30rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  margin-left: 5rem;
+  margin-top: 3rem;
+  margin: auto;
+  text-align: center;
+  overflow-y: scroll;
+}
+.PokemonBox {
+  display: flex;
+  background-color: #ffbc42;
+  width: 18rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  text-align: left;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-top: 1rem;
+}
+.PokemonInfos {
+  margin-right: 5rem;
+  width: 15rem;
+}
+.PokemonNums {
+  text-align: right;
+}
+.TraderImgs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 8rem;
+}
+.TraderImgs img {
+  width: 8rem;
 }
 
-.PokemonBox{
-    display: flex;
-    background-color: #FFBC42;
-    width: 18rem;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1rem;
-    text-align: left;
-    justify-content: center;
-    margin-left: 1rem;
-    margin-top: 1rem;
+.CheckboxConfirm {
+  display: flex;
+  justify-content: center;
 }
-.PokemonInfos{
-    margin-right: 5rem;
-    width: 15rem;
-}
-.PokemonNums{
-    text-align: right;
-}
-.TraderImgs{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 8rem;
-}
-.TraderImgs img{
-    width: 8rem;
-}
-
-.CheckboxConfirm{
-    display: flex;
-    justify-content: center;
-}
-.CheckboxConfirm input{
-    padding: 2rem;
-    margin-top: 1.2rem;
+.CheckboxConfirm input {
+  padding: 2rem;
+  margin-top: 1.2rem;
 }
