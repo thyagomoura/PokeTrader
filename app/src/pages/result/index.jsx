@@ -2,33 +2,33 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/result.css";
 import Charizard from "../../assets/charizard.png";
-import History from '../../components/History/History.jsx'
+import History from "../../components/History/History.jsx";
 
 function ResultPage() {
-  let basePlayer1 = localStorage.getItem("TotalBaseExperiencePlayer1");
-  let basePlayer2 = localStorage.getItem("TotalBaseExperiencePlayer2");
+  let baseExpPlayer1 = localStorage.getItem("TotalBaseExperiencePlayer1");
+  let baseExpPlayer2 = localStorage.getItem("TotalBaseExperiencePlayer2");
   let valid = true;
 
   const calculateBaseExperience = () => {
-    let Abstractresult = Math.abs(basePlayer1 - basePlayer2);
+    let AbstractResult = Math.abs(baseExpPlayer1 - baseExpPlayer2);
 
-    if (Abstractresult > 75) {
+    if (AbstractResult > 75) {
       valid = false;
-      localStorage.setItem('ValidTrade', valid);
+      localStorage.setItem("ValidTrade", valid);
       return valid;
-    } else if (Abstractresult < 75) {
+    } else if (AbstractResult < 75) {
       valid = true;
-      localStorage.setItem('ValidTrade', valid);
-      return valid
+      localStorage.setItem("ValidTrade", valid);
+      return valid;
     }
   };
 
   useEffect(() => {
     calculateBaseExperience();
-  },);
+  });
   return (
     <div className="ResultGlobalContent">
-        <History/>
+      <History />
       <div className="ResultTextButton">
         {calculateBaseExperience() && calculateBaseExperience() ? (
           <div className="ResultText">

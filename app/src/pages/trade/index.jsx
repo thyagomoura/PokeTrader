@@ -4,7 +4,7 @@ import "../../styles/trader.css";
 import Charmaleon from "../../assets/charmaleon.png";
 import TradeIcon from "../../assets/tradeIcon.png";
 import Player from "../../components/Player/Player";
-import History from '../../components/History/History'
+import History from "../../components/History/History";
 
 const TradePage = () => {
   const [numPokemonTrade1, setNumPokemonTrade1] = useState([]);
@@ -12,12 +12,11 @@ const TradePage = () => {
   const history = useHistory();
 
   var trade = [];
-  var suporte = "";
-  let TotalExperienceP1=0;
-  let TotalExperienceP2=0;
+  var support = "";
+  let TotalExperienceP1 = 0;
+  let TotalExperienceP2 = 0;
 
   const ValidTrade = () => {
-    //valid entered player
     if (
       numPokemonTrade1.length < 1 ||
       numPokemonTrade1.length > 6 ||
@@ -27,27 +26,23 @@ const TradePage = () => {
       alert("Um player não selecionou entre 1 e 6 pokemons para troca");
     } else {
       numPokemonTrade1.map((index) => {
-        //set localStorage player 1
         if (Array.isArray(trade)) {
           TotalExperienceP1 =
             +TotalExperienceP1 + +(index.pokemon.experience * index.quantity);
-            localStorage.setItem('TotalBaseExperiencePlayer1',TotalExperienceP1);
+          localStorage.setItem("TotalBaseExperiencePlayer1", TotalExperienceP1);
           trade.push(index);
           return trade;
         }
-        return '';
+        return "";
       });
 
-      //set localStorage player 2
       numPokemonTrade2.map((index) => {
         TotalExperienceP2 =
           +TotalExperienceP2 + +(index.pokemon.experience * index.quantity);
-          localStorage.setItem('TotalBaseExperiencePlayer2',TotalExperienceP2);
+        localStorage.setItem("TotalBaseExperiencePlayer2", TotalExperienceP2);
         trade.push(index);
-
-        suporte = JSON.stringify(trade);
-        localStorage.setItem("Trade", suporte);
-        
+        support = JSON.stringify(trade);
+        localStorage.setItem("Trade", support);
         return history.push("/result");
       });
     }
@@ -55,8 +50,9 @@ const TradePage = () => {
 
   return (
     <div className="TraderGlobalContent">
-      <History/>
+      <History />
       <Player
+        numPlayer={1}
         numPokemonTrade={numPokemonTrade1}
         setNumPokemonTrade={setNumPokemonTrade1}
       />
@@ -65,6 +61,7 @@ const TradePage = () => {
         <img alt="Trade icon" src={TradeIcon} onClick={ValidTrade} />
       </div>
       <Player
+        numPlayer={2}
         numPokemonTrade={numPokemonTrade2}
         setNumPokemonTrade={setNumPokemonTrade2}
       />

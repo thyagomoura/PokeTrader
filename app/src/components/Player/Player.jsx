@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../../services/api";
 
-const Player = ({ numPokemonTrade, setNumPokemonTrade }) => {
+const Player = ({ numPokemonTrade, setNumPokemonTrade, numPlayer }) => {
   const [pokemon, setPokemon] = useState([]);
   const quantityPlayer1Trade = (quantity, pokemon) => {
     numPokemonTrade.map((index) => {
@@ -58,7 +58,7 @@ const Player = ({ numPokemonTrade, setNumPokemonTrade }) => {
 
   return (
     <div className="TraderContentBox1">
-      <h3>Player 1</h3>
+      <h3>Player {numPlayer}</h3>
 
       {pokemon &&
         pokemon.map((index) => (

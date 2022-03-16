@@ -29,6 +29,9 @@
   margin-left: 12rem;
   max-width: 40%;
 }
+.TextStar {
+  color: #FF9441;
+}
 .HomeButtonBox {
   position: absolute;
   text-align: center;

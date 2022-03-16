@@ -6,8 +6,6 @@ function HistoryComponent() {
   var resultLastTrade = localStorage.getItem("ValidTrade");
   var baseExperience1 = localStorage.getItem("TotalBaseExperiencePlayer1");
   var baseExperience2 = localStorage.getItem("TotalBaseExperiencePlayer2");
-
-  console.log(resultLastTrade)
   let validMap = true;
 
   if (save === null || save === undefined) {
@@ -17,7 +15,14 @@ function HistoryComponent() {
     <div className="historyBox">
       <img alt="historyicon" src={HistoryIcon} />
       <div className="ShowHistory">
-        <h3>Última trade - {resultLastTrade && resultLastTrade==='true' ? (<>Sucesso</>):(<>Sem sucesso</>)}</h3>
+        <h3>
+          Última trade -{" "}
+          {resultLastTrade && resultLastTrade === "true" ? (
+            <>Sucesso</>
+          ) : (
+            <>Sem sucesso</>
+          )}
+        </h3>
         <h4>
           {baseExperience1} ------- {baseExperience2}
         </h4>
