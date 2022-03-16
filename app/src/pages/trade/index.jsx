@@ -58,7 +58,7 @@ const TradePage = () => {
       />
       <div className="TraderImgs">
         <img alt="Charmandr Pokemon" src={Charmaleon} />
-        <img alt="Trade icon" src={TradeIcon} onClick={ValidTrade} />
+        <img className="TradeIcon" alt="Trade icon" src={TradeIcon} onClick={ValidTrade} />
       </div>
       <Player
         numPlayer={2}

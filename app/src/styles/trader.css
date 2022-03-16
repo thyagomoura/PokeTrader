@@ -45,6 +45,10 @@
 .TraderImgs img {
   width: 8rem;
 }
+.TradeIcon:hover{
+  cursor: pointer;
+  opacity: 0.8;
+}
 
 .CheckboxConfirm {
   display: flex;
