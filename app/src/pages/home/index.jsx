@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import Charmander from "../../assets/charmander.png";
-import { Link } from "react-router-dom";
 
 function HomePage() {
   return (

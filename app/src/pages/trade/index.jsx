@@ -10,10 +10,10 @@ const TradePage = () => {
   const [numPokemonTrade2, setNumPokemonTrade2] = useState([]);
   const history = useHistory();
 
-  let TotalexperienceP1 = 0;
-  let TotalexperienceP2 = 0;
   var trade = [];
   var suporte = "";
+  let TotalExperienceP1=0;
+  let TotalExperienceP2=0;
 
   const ValidTrade = () => {
     //valid entered player
@@ -26,27 +26,27 @@ const TradePage = () => {
       alert("Um player não selecionou entre 1 e 6 pokemons para troca");
     } else {
       numPokemonTrade1.map((index) => {
-        TotalexperienceP1 =
-          +TotalexperienceP1 + +(index.pokemon.experience * index.quantity);
-
         //set localStorage player 1
         if (Array.isArray(trade)) {
+          TotalExperienceP1 =
+            +TotalExperienceP1 + +(index.pokemon.experience * index.quantity);
+            localStorage.setItem('TotalBaseExperiencePlayer1',TotalExperienceP1);
           trade.push(index);
           return trade;
         }
+        return 0;
       });
-
-      
 
       //set localStorage player 2
       numPokemonTrade2.map((index) => {
-        TotalexperienceP2 =
-          +TotalexperienceP2 + +(index.pokemon.experience * index.quantity);
-
-          trade.push(index);
+        TotalExperienceP2 =
+          +TotalExperienceP2 + +(index.pokemon.experience * index.quantity);
+          localStorage.setItem('TotalBaseExperiencePlayer2',TotalExperienceP2);
+        trade.push(index);
 
         suporte = JSON.stringify(trade);
         localStorage.setItem("Trade", suporte);
+        
         return history.push("/result");
       });
     }
