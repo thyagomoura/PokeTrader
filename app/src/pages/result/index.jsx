@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/result.css";
 import Charizard from "../../assets/charizard.png";
+import History from '../../components/History.jsx'
 
 function ResultPage() {
   //   var save = JSON.parse(localStorage.getItem("Trade"));
@@ -34,6 +35,7 @@ function ResultPage() {
   }, []);
   return (
     <div className="ResultGlobalContent">
+        <History/>
       <div className="ResultTextButton">
         {calculateBaseExperience() && calculateBaseExperience() ? (
           <div className="ResultText">

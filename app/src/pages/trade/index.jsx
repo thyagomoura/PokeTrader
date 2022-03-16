@@ -4,6 +4,7 @@ import "../../styles/trader.css";
 import Charmaleon from "../../assets/charmaleon.png";
 import TradeIcon from "../../assets/tradeIcon.png";
 import Player from "../../components/Player";
+import History from '../../components/History.jsx'
 
 const TradePage = () => {
   const [numPokemonTrade1, setNumPokemonTrade1] = useState([]);
@@ -54,6 +55,7 @@ const TradePage = () => {
 
   return (
     <div className="TraderGlobalContent">
+      <History/>
       <Player
         numPokemonTrade={numPokemonTrade1}
         setNumPokemonTrade={setNumPokemonTrade1}

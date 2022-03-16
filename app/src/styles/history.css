@@ -1,0 +1,15 @@
+.historyBox{
+    position:absolute;
+    position: fixed;
+    top:0;
+    left: 0;
+}
+.historyBox:hover .ShowHistory{
+    display:block;
+    background-color: #fff;
+    padding: 0.5rem;
+}
+
+.ShowHistory{
+    display:none;
+}
