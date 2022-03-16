@@ -9,4 +9,4 @@ Repositório destinado a criação de uma aplicação WEB que consiste na verifi
 
 ### Deploy:
 
-#### Heroku -
+#### Heroku: https://poketradepokemon.herokuapp.com
