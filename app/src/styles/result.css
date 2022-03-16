@@ -6,25 +6,10 @@
 .ResultTextButton{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     text-align: center;
-}
-.ResultImg{
-    position: absolute;
-    margin-top: 10rem;
 }
 .ResultImg img{
     width: 35rem;
 }
-.ResultTextContent{
-    margin-top: 10rem;
-}
-.ResultButtonJogar{
-    margin-top: 10rem;
-}
-.ResultButtonJogar button{
-    background-color: #1093C6;
-    color: #fff;
-    padding: 0.5rem 0.5rem;
-    text-decoration: none;
-}
+
